@@ -36,7 +36,7 @@ public class myTestCases {
 		originAndDestinationCity.get(0).click();
 		
         Thread.sleep(4000);
-     
+        
 		WebElement citiesList=driver.findElement(By.cssSelector(".sc-gzVnrw.jIeOgV.AutoComplete__List"));
 		List<WebElement> allCities=citiesList.findElements(By.tagName("li"));
 		int randomIndex=rand.nextInt(1,allCities.size());
@@ -51,7 +51,7 @@ public class myTestCases {
 		
 		WebElement allTheCities=driver.findElement(By.cssSelector(".sc-gzVnrw.jIeOgV.AutoComplete__List"));
 		List<WebElement> theCities=allTheCities.findElements(By.tagName("li"));
-		int randIndex=rand.nextInt(theCities.size());
+		int randIndex=rand.nextInt(1,theCities.size());
 		
 		theCities.get(randIndex).click();
 		
@@ -60,8 +60,6 @@ public class myTestCases {
 		WebElement departureDate=driver.findElement(By.className("sc-kqlzXE"));
 		departureDate.click();
 		
-		
-
 		
 		List<WebElement> allDates=driver.findElements(By.className("DayPicker-Day"));
 		allDates.get(20).click();
@@ -81,7 +79,6 @@ public class myTestCases {
 				
 		WebElement SearchButton=driver.findElement(By.cssSelector("div[class='sc-hizQCF yTOfA d-none d-md-block'] button[type='button']"));
 		SearchButton.click();
-		
 		
 	}
 	@AfterTest
