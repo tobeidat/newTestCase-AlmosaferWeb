@@ -3,7 +3,6 @@ package newTestCaseAlmosaferWeb;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +17,9 @@ public class myTestCases {
 	String[] myUrl= {"https://www.almosafer.com/ar/","https://www.almosafer.com/en"};
 	Random rand = new Random();
 	int index=rand.nextInt(myUrl.length);
-	
+
 	@BeforeTest
-	public void beforeTest(){
+	public void beforeTest() {
 		driver.get(myUrl[index]);
 		driver.manage().window().maximize();
 		
@@ -31,7 +30,6 @@ public class myTestCases {
 	@Test()
 	public void myTest() throws InterruptedException
 	{
-		
 		Thread.sleep(20000);
 		List<WebElement> originAndDestinationCity=driver.findElements(By.className("sc-ifAKCX"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -39,8 +37,6 @@ public class myTestCases {
 		
         Thread.sleep(4000);
      
-        
-		
 		WebElement citiesList=driver.findElement(By.cssSelector(".sc-gzVnrw.jIeOgV.AutoComplete__List"));
 		List<WebElement> allCities=citiesList.findElements(By.tagName("li"));
 		int randomIndex=rand.nextInt(1,allCities.size());
